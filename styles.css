@@ -1,0 +1,183 @@
+/* ----------------------- */
+/* responsive carousel css */
+/* ----------------------- */
+
+/*-------------- reset ------------------*/
+
+*:before,
+*,
+*:after {
+	box-sizing: border-box;
+}
+
+html,body,div,span,h1,h2,h3,h4,h5,h6,
+p,img,strong,ol,ul,li,form,label,article,aside,
+canvas,footer,header,hgroup,menu,nav,section {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
+/*-------------- end reset ---------------*/
+
+/*-------------- global ------------------*/
+html {
+	font-size: 62.5%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+body {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 1.6rem;
+	margin: 30px auto;
+	max-width: 1200px;
+	padding: 0;
+}
+
+button {
+	border: none;
+	border-radius: .3rem;
+	background: #fff;
+	background: rgba( 255, 255, 255, .8 );
+	cursor: pointer;
+	-webkit-transition: 200ms all ease-in-out;
+		 -moz-transition: 200ms all ease-in-out;
+			-ms-transition: 200ms all ease-in-out;
+			 -o-transition: 200ms all ease-in-out;
+					transition: 200ms all ease-in-out;
+}
+
+	button:hover {
+		background: #fff;
+	}
+
+.carousel {
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	max-width: 120rem;
+	width: 100%;
+}
+
+	.carousel:hover .carousel-navigation button {
+		opacity: .7;
+	}
+
+.carousel-item {
+	display: block;
+	position: absolute;
+		top: 0;
+		left: 100%;
+	-webkit-transition: 400ms -webkit-transform ease-in-out;
+		 -moz-transition: 400ms 	 -moz-transform ease-in-out;
+			 -o-transition: 400ms 		 -o-transform ease-in-out;
+					transition: 400ms 				transform ease-in-out;
+	width: 100%;
+	z-index: 1;
+}
+
+.carousel-item-previous {
+  -webkit-transform: translate(-200%, 0);
+  	 -moz-transform: translate(-200%, 0);
+  		-ms-transform: translate(-200%, 0);
+			 -o-transform: translate(-200%, 0);
+  				transform: translate(-200%, 0);
+	z-index: 2;
+}
+
+.carousel-item-active {
+	position: relative;
+  -webkit-transform: translate(-100%, 0);
+  	 -moz-transform: translate(-100%, 0);
+  		-ms-transform: translate(-100%, 0);
+			 -o-transform: translate(-100%, 0);
+  				transform: translate(-100%, 0);
+	z-index: 4;
+}
+
+.carousel-item-next {
+  -webkit-transform: translate(0, 0);
+  	 -moz-transform: translate(0, 0);
+  		-ms-transform: translate(0, 0);
+			 -o-transform: translate(0, 0);
+  				transform: translate(0, 0);
+	z-index: 3;
+}
+/*
+.carousel-item.moving-back {
+  -webkit-transform: translate(100%, 0);
+  	 -moz-transform: translate(100%, 0);
+  		-ms-transform: translate(100%, 0);
+			 -o-transform: translate(100%, 0);
+  				transform: translate(100%, 0);
+}
+
+.carousel-item.moving-forward {
+  -webkit-transform: translate(-100%, 0);
+  	 -moz-transform: translate(-100%, 0);
+  		-ms-transform: translate(-100%, 0);
+			 -o-transform: translate(-100%, 0);
+  				transform: translate(-100%, 0);
+}
+*/
+.carousel-item img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.carousel-copy {
+	background: transparent;
+	background: rgba(0, 0, 0, .4);
+	color: #fff;
+	height: 100%;
+	padding: 3% 10%;
+	position: absolute;
+		top: 0;
+	width: 100%;
+}
+
+.carousel-copy > * {
+	margin: 0 0 .5rem;
+}
+
+.carousel-copy h1 {
+	font-size: 1.8rem;
+}
+
+.carousel-copy p {
+	font-size: 1.4rem;
+}
+
+.carousel-navigation {
+	position: absolute;
+		top: 40%;
+	width: 100%;
+	z-index: 5;
+}
+
+.carousel .carousel-navigation button {
+	background: #fff;
+	opacity: .3;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+	.carousel .carousel-navigation button:hover {
+		opacity: 1;
+	}
+
+.carousel-left {
+	float: left;
+}
+
+.carousel-right {
+	float: right;
+}

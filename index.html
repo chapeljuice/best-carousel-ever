@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>responsive carousel</title>
+		<link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+		
+		<section class="carousel">
+
+			<div class="carousel-item item-one carousel-item-active">
+				<img src="img/wood.jpg" alt="" class="carousel-img" />
+				<div class="carousel-copy">
+					<h1>First item</h1>
+					<p>This is the first item, you can tell because: first item.</p>
+					<button class="carousel-button">See first</button>
+				</div>
+			</div>
+
+			<div class="carousel-item item-two carousel-item-next">
+				<img data-src="img/buttons.jpg" alt="" class="carousel-img" />
+				<div class="carousel-copy">
+					<h1>Second item</h1>
+					<p>This is the second item, you can tell because: second item.</p>
+					<button class="carousel-button">See second</button>
+				</div>
+			</div>
+
+			<div class="carousel-item item-three">
+				<img data-src="img/bumpers.jpg" alt="" class="carousel-img" />
+				<div class="carousel-copy">
+					<h1>Third item</h1>
+					<p>This is the third item, you can tell because: third item.</p>
+					<button class="carousel-button">See third</button>
+				</div>
+			</div>
+
+			<div class="carousel-item item-four carousel-item-previous">
+				<img data-src="img/gum-wall.jpg" alt="" class="carousel-img" />
+				<div class="carousel-copy">
+					<h1>Fourth item</h1>
+					<p>This is the fourth item, you can tell because: fourth item.</p>
+					<button class="carousel-button">See fourth</button>
+				</div>
+			</div>
+
+			<div class="carousel-navigation">
+				<button class="carousel-left">&lt;</button>
+				<button class="carousel-right">&gt;</button>
+			</div>
+
+		</section>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="scripts.js"></script>
+  </body>
+</html>
