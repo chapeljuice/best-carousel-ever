@@ -7,50 +7,96 @@
   </head>
   <body>
 		
-		<section class="carousel">
+		<ul class="carousel" role="listbox">
 
-			<div class="carousel-item item-one carousel-item-active">
-				<img src="img/wood.jpg" alt="" class="carousel-img" />
+			<li class="carousel-item carousel-item-active" data-thumb-id="carousel-item-one" role="option">
+				<img src="img/small-wood.jpg" alt="" class="carousel-img" />
 				<div class="carousel-copy">
 					<h1>First item</h1>
 					<p>This is the first item, you can tell because: first item.</p>
-					<button class="carousel-button">See first</button>
+					<button class="carousel-button" role="button" tabindex="0">See first</button>
 				</div>
-			</div>
+			</li>
 
-			<div class="carousel-item item-two carousel-item-next">
-				<img data-src="img/buttons.jpg" alt="" class="carousel-img" />
+			<li class="carousel-item carousel-item-next" data-thumb-id="carousel-item-two" role="option">
+				<img data-src="img/small-buttons.jpg" alt="" class="carousel-img" />
 				<div class="carousel-copy">
 					<h1>Second item</h1>
 					<p>This is the second item, you can tell because: second item.</p>
-					<button class="carousel-button">See second</button>
+					<button class="carousel-button" role="button">See second</button>
 				</div>
-			</div>
+			</li>
 
-			<div class="carousel-item item-three">
-				<img data-src="img/bumpers.jpg" alt="" class="carousel-img" />
+			<li class="carousel-item" data-thumb-id="carousel-item-three" role="option">
+				<img data-src="img/small-bumpers.jpg" alt="" class="carousel-img" />
 				<div class="carousel-copy">
 					<h1>Third item</h1>
 					<p>This is the third item, you can tell because: third item.</p>
-					<button class="carousel-button">See third</button>
+					<button class="carousel-button" role="button">See third</button>
 				</div>
-			</div>
+			</li>
 
-			<div class="carousel-item item-four carousel-item-previous">
-				<img data-src="img/gum-wall.jpg" alt="" class="carousel-img" />
+			<li class="carousel-item" data-thumb-id="carousel-item-four" role="option">
+				<img data-src="img/small-gum-wall.jpg" alt="" class="carousel-img" />
 				<div class="carousel-copy">
 					<h1>Fourth item</h1>
 					<p>This is the fourth item, you can tell because: fourth item.</p>
-					<button class="carousel-button">See fourth</button>
+					<button class="carousel-button" role="button">See fourth</button>
 				</div>
-			</div>
+			</li>
 
-			<div class="carousel-navigation">
-				<button class="carousel-left">&lt;</button>
-				<button class="carousel-right">&gt;</button>
-			</div>
+			<li class="carousel-item carousel-item-previous" data-thumb-id="carousel-item-five" role="option">
+				<img data-src="img/small-gum-wall.jpg" alt="" class="carousel-img" />
+				<div class="carousel-copy">
+					<h1>Fifth item</h1>
+					<p>This is the fifth item, you can tell because: fifth item.</p>
+					<button class="carousel-button" role="button">See fifth</button>
+				</div>
+			</li>
 
-		</section>
+			<button class="carousel-navigation carousel-left" role="button" aria-label="Previous item">&lt;</button>
+			<button class="carousel-navigation carousel-right" role="button" aria-label="Next item">&gt;</button>
+
+			<ul class="carousel-thumbnails" role="listbox">
+
+				<li class="carousel-thumb thumb-one" role="option">
+					<button class="carousel-thumb-button active" id="carousel-item-one" role="button">
+						<img data-src="img/thumb-wood.jpg" alt="" class="carousel-thumb-img" />
+						<p class="thumb-copy">First item</p>
+					</button>
+				</li><!-- inline-block comment hack
+
+				--><li class="carousel-thumb thumb-two" role="option">
+					<button class="carousel-thumb-button" id="carousel-item-two" role="button">
+						<img data-src="img/thumb-buttons.jpg" alt="" class="carousel-thumb-img" />
+						<p class="thumb-copy">Second item</p>
+					</button>
+				</li><!-- inline-block comment hack
+
+				--><li class="carousel-thumb thumb-three" role="option">
+					<button class="carousel-thumb-button" id="carousel-item-three" role="button">
+						<img data-src="img/thumb-bumpers.jpg" alt="" class="carousel-thumb-img" />
+						<p class="thumb-copy">Third item</p>
+					</button>
+				</li><!-- inline-block comment hack
+
+				--><li class="carousel-thumb thumb-four" role="option">
+					<button class="carousel-thumb-button" id="carousel-item-four" role="button">
+						<img data-src="img/thumb-gum-wall.jpg" alt="" class="carousel-thumb-img" />
+						<p class="thumb-copy">Fourth item</p>
+					</button>
+				</li><!-- inline-block comment hack
+
+				--><li class="carousel-thumb thumb-five" role="option">
+					<button class="carousel-thumb-button" id="carousel-item-five" role="button">
+						<img data-src="img/thumb-gum-wall.jpg" alt="" class="carousel-thumb-img" />
+						<p class="thumb-copy">Fifth item</p>
+					</button>
+				</li>
+
+			</ul>
+
+		</ul>
 
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>

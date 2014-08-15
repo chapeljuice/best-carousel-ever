@@ -34,8 +34,7 @@ html {
 }
 
 body {
-	font-family: helvetica, arial, sans-serif;
-	font-size: 1.6rem;
+	font: 1.6rem helvetica, arial, sans-serif;
 	margin: 30px auto;
 	max-width: 1200px;
 	padding: 0;
@@ -47,11 +46,11 @@ button {
 	background: #fff;
 	background: rgba( 255, 255, 255, .8 );
 	cursor: pointer;
-	-webkit-transition: 200ms all ease-in-out;
-		 -moz-transition: 200ms all ease-in-out;
-			-ms-transition: 200ms all ease-in-out;
-			 -o-transition: 200ms all ease-in-out;
-					transition: 200ms all ease-in-out;
+	-webkit-transition: 150ms all ease-in-out;
+		 -moz-transition: 150ms all ease-in-out;
+			-ms-transition: 150ms all ease-in-out;
+			 -o-transition: 150ms all ease-in-out;
+					transition: 150ms all ease-in-out;
 }
 
 	button:hover {
@@ -66,12 +65,14 @@ button {
 	width: 100%;
 }
 
-	.carousel:hover .carousel-navigation button {
-		opacity: .7;
+	.carousel:hover button.carousel-navigation {
+		opacity: .5;
 	}
 
 .carousel-item {
 	display: block;
+	list-style: none;
+	overflow: hidden;
 	position: absolute;
 		top: 0;
 		left: 100%;
@@ -110,23 +111,7 @@ button {
   				transform: translate(0, 0);
 	z-index: 3;
 }
-/*
-.carousel-item.moving-back {
-  -webkit-transform: translate(100%, 0);
-  	 -moz-transform: translate(100%, 0);
-  		-ms-transform: translate(100%, 0);
-			 -o-transform: translate(100%, 0);
-  				transform: translate(100%, 0);
-}
 
-.carousel-item.moving-forward {
-  -webkit-transform: translate(-100%, 0);
-  	 -moz-transform: translate(-100%, 0);
-  		-ms-transform: translate(-100%, 0);
-			 -o-transform: translate(-100%, 0);
-  				transform: translate(-100%, 0);
-}
-*/
 .carousel-item img {
 	display: block;
 	height: auto;
@@ -134,14 +119,15 @@ button {
 }
 
 .carousel-copy {
-	background: transparent;
-	background: rgba(0, 0, 0, .4);
+	background: #d7234a;
+	background: rgba(215,35,74,0.90);
 	color: #fff;
 	height: 100%;
-	padding: 3% 10%;
+	padding: 1rem;
 	position: absolute;
 		top: 0;
-	width: 100%;
+		left: 5%;
+	width: 55%;
 }
 
 .carousel-copy > * {
@@ -149,35 +135,306 @@ button {
 }
 
 .carousel-copy h1 {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 }
 
 .carousel-copy p {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
+}
+
+.carousel-button {
+	position: relative;
+	z-index: 6;
 }
 
 .carousel-navigation {
 	position: absolute;
-		top: 40%;
-	width: 100%;
+		top: 35%;
 	z-index: 5;
 }
 
-.carousel .carousel-navigation button {
-	background: #fff;
+.carousel button.carousel-navigation {
+	background: #000;
+	border-radius: 50%;
+	color: #fff;
+	font: bold 2.2rem "Courier New", arial, sans-serif;
+	height: 4rem;
+	margin: 0;
 	opacity: .3;
-	font-size: 1.2rem;
-	font-weight: bold;
+	width: 4rem;
 }
 
-	.carousel .carousel-navigation button:hover {
+	.carousel button.carousel-navigation:hover {
+		opacity: .8;
+	}
+
+.carousel button.carousel-left {
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	padding: .3rem 0 0 1.4rem;
+	left: -2rem;
+}
+
+.carousel button.carousel-right {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	padding: .3rem 1.4rem 0 0;
+	right: -2rem;
+}
+
+.carousel-thumbnails {
+	display: none;
+	position: absolute;
+		bottom: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 4;
+}
+
+.carousel-thumb {
+	background: rgba(0, 0, 0, .5);
+	display: inline-block;
+	line-height: 0;
+	padding: 1rem .5rem;
+}
+
+	.carousel-thumb:first-of-type {
+		border-top-left-radius: .6rem;
+		padding-left: 1rem;
+	}
+
+	.carousel-thumb:last-child {
+		border-top-right-radius: .6rem;
+		padding-right: 1rem;
+	}
+
+.carousel-thumb-button {
+	-webkit-appearance: none;
+		 -moz-appearance: window;
+		 			appearance: none;
+	background: none;
+	border-radius: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+	.carousel-thumb-button:hover {
+		-webkit-appearance: none;
+			 -moz-appearance: window;
+			 			appearance: none;
+		background: none;
+	}
+
+.carousel-thumb-button img {
+	border: 1px solid transparent;
+	-webkit-transition: 150ms border-color ease-in-out;
+		 -moz-transition: 150ms border-color ease-in-out;
+			 -o-transition: 150ms border-color ease-in-out;
+					transition: 150ms border-color ease-in-out;
+}
+
+	.carousel-thumb-button.active img {
+		border-color: #fff;
+	}
+
+.thumb-copy {
+	background: rgba(0, 0, 0, .7);
+	color: #fff;
+	display: inline-block;
+	height: 100%;
+	line-height: normal;
+	opacity: 0;
+	padding: 1rem;
+	position: absolute;
+		top: 0;
+		left: 0;
+	-webkit-transition: 150ms opacity ease-in-out;
+		 -moz-transition: 150ms opacity ease-in-out;
+			 -o-transition: 150ms opacity ease-in-out;
+					transition: 150ms opacity ease-in-out;
+	vertical-align: middle;
+	width: 100%;
+}
+
+	.carousel-thumb-button.active .thumb-copy {
+		border: 1px solid #fff;
+	}
+
+	.carousel-thumb:hover .thumb-copy {
 		opacity: 1;
 	}
 
-.carousel-left {
-	float: left;
+
+/* media queries */
+@media (min-width: 400px) {
+
+	.carousel-copy > * {
+		margin: 0 0 1rem;
+	}
+
+	.carousel-copy h1 {
+		font-size: 1.8rem;
+	}
+
+	.carousel-copy p {
+		font-size: 1.4rem;
+	}
+
+	.carousel-button {
+		font-size: 1.4rem;
+	}
+
+	.carousel button.carousel-navigation {
+		font-size: 2.4rem;
+		height: 5rem;
+		width: 5rem;
+	}
+
+	.carousel button.carousel-left {
+		padding: .3rem 0 0 2rem;
+		left: -2.5rem;
+	}
+
+	.carousel button.carousel-right {
+		padding: .3rem 2rem 0 0;
+		right: -2.5rem;
+	}
+
 }
 
-.carousel-right {
-	float: right;
+@media (min-width: 500px) {
+
+	button {
+		border-radius: .6rem;
+	}
+
+	.carousel-copy {
+		height: auto;
+		width: 50%;
+	}
+
+	.carousel-copy h1 {
+		font-size: 2.5rem;
+	}
+
+	.carousel-copy p {
+		font-size: 1.6rem;
+	}
+
+	.carousel-button {
+		font-size: 1.6rem;
+		padding: .5rem 1rem;
+	}
+
+	.carousel button.carousel-navigation {
+		font-size: 2.6rem;
+		height: 6rem;
+		width: 6rem;
+	}
+
+	.carousel button.carousel-left {
+		padding: .3rem 0 0 2.4rem;
+		left: -3rem;
+	}
+
+	.carousel button.carousel-right {
+		padding: .3rem 2.4rem 0 0;
+		right: -3rem;
+	}
+
+}
+
+@media (min-width: 600px) {
+
+	.carousel-copy h1 {
+		font-size: 2.8rem;
+	}
+
+	.carousel-copy p {
+		font-size: 1.8rem;
+	}
+
+	.carousel-button {
+		font-size: 1.8rem;
+	}
+
+	.carousel button.carousel-navigation {
+		font-size: 3rem;
+	}
+
+}
+
+@media (min-width: 700px) {
+
+	.carousel-copy {
+		width: 40%;
+	}
+
+	.carousel-copy h1 {
+		font-size: 3rem;
+	}
+
+	.carousel-copy p {
+		font-size: 2rem;
+	}
+
+	.carousel-button {
+		font-size: 2rem;
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.carousel-thumbnails {
+		display: inline-block;
+	}
+
+}
+
+@media (min-width: 850px) {
+
+	.carousel-copy {
+		padding: 2rem;
+	}
+
+}
+
+@media (min-width: 1200px) {
+
+	.carousel-copy h1 {
+		font-size: 4rem;
+	}
+
+	.carousel-copy p {
+		font-size: 2.5rem;
+	}
+
+	.carousel-button {
+		font-size: 2.5rem;
+		padding: .5rem 2rem;
+	}
+
+	.carousel button.carousel-navigation {
+		font-size: 5rem;
+		height: 10rem;
+		width: 10rem;
+	}
+
+	.carousel button.carousel-left {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		padding: .5rem 0 0 4rem;
+		left: -5rem;
+	}
+
+	.carousel button.carousel-right {
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		padding: .5rem 4rem 0 0;
+		right: -5rem;
+	}
+
 }
