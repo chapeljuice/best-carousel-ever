@@ -273,20 +273,24 @@ var carousel = {
 		// check the direction the slides are going
 		if ( carousel.direction === 'back' ) {
 
-			// check direction slides are going
+			// find the next adjacent slide
 			carousel.checkAdjacentSlide( 'previous' );
 
+			// add previous class to the appropriate slide
 			carousel.nextAdjacentSlide
 				.addClass( 'carousel-item-previous' );
 
+			// previous slide becomes active slide
 			carousel.previousSlide
 				.removeClass( 'carousel-item-previous' )
 				.addClass( 'carousel-item-active' );
 
+			// active slide becomes next slide
 			carousel.activeSlide
 				.removeClass( 'carousel-item-active' )
 				.addClass( 'carousel-item-next' );
 
+			// next slide becomes rando no-class slide :)
 			carousel.nextSlide
 				.removeClass( 'carousel-item-next' );
 
@@ -295,46 +299,57 @@ var carousel = {
 			// direction must be 'next'
 			carousel.checkAdjacentSlide( 'next' );
 
+			// add next class to the appropriate slide
 			carousel.nextAdjacentSlide
 				.addClass( 'carousel-item-next' );
 
+			// next slide becomes active slide
 			carousel.nextSlide
 				.removeClass( 'carousel-item-next' )
 				.addClass( 'carousel-item-active' );
 
+			// active slide becomes previous slide
 			carousel.activeSlide
 				.removeClass( 'carousel-item-active' )
 				.addClass( 'carousel-item-previous' );
 
+			// previous slide becomes rando no-class slide :)
 			carousel.previousSlide
 				.removeClass( 'carousel-item-previous' );
 
 		} else {
 
+			// reset slide classes
 			carousel.allSlides
 				.attr( 'class', 'carousel-item' );
 
-			// direction must be 'none'
+			// direction is 'none'
 			carousel.checkAdjacentSlide( 'none' );
 
+			// add next class to the appropriate slide
 			carousel.nextAdjacentSlide
 				.addClass( 'carousel-item-next' );
 
+			// make the clicked nav slide the active slide
 			carousel.thumbClickedSlide
 				.addClass( 'carousel-item-active' );
 
+			// set the previous slide
 			carousel.previousAdjacentSlide
 				.addClass( 'carousel-item-previous' );
 
 
 		}
 
+		// make the CTA button on the active slide focusable
 		$( '.carousel-item-active .carousel-button' )
 			.attr( 'tabindex', '0' );
 
+		// slide are finished moving, so remove those classes
 		carousel.allSlides
 			.removeClass( 'moving-back moving-forward' );
 
+		// set / update the variables once more
 		carousel.setVariables();
 
 		// set which thumbnail is active
@@ -351,6 +366,7 @@ var carousel = {
 	}
 };
 
+// when the document is loaded...
 $( document ).ready( function () {
 
 	// event handlers
@@ -380,6 +396,7 @@ $( document ).ready( function () {
 		// set the slide that corresponds with that thumb
 		carousel.thumbClickedSlide = $( '.carousel-item[data-thumb-id="' + thumbClickedId + '"]' );
 
+		// advance the carousel slides
 		carousel.advanceSlide();
 
 		// reset the timer if someone manually navigates
@@ -454,6 +471,7 @@ $( document ).ready( function () {
 	// when the window resizes...
 	$( window ).resize( function () {
 
+		// check the media queries
 		carousel.checkMediaQueries();
 
 	});
